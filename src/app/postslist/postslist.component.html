@@ -1,0 +1,21 @@
+<p>
+  postslist works!
+</p>
+
+<!-- <p>{{posts[0]}}</p> -->
+
+
+<li
+	*ngFor="let post of posts">
+	<h3><b>{{post.title}}</b></h3>
+	 <div class="post-image">
+      <img [src]="post.imagePath" [alt]="post.title">
+    </div>
+    <h3><i>{{post.content}}</i></h3>
+
+	<a [routerLink]="['/edit', post.id]"><button class="btn btn-primary">EDIT</button></a>
+	<button (click)="OnDelete(post.id)" class="btn btn-danger">DELETE</button>
+</li>
+
+
+<!-- <img src="https://www.w3schools.com/images/w3schools_green.jpg" [alt]="post.title"> -->

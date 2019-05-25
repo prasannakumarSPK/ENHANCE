@@ -1,0 +1,65 @@
+<p>
+  createpost works!
+</p>
+
+<!-- <form (submit)="onAddPost(postForm)" #postForm = "ngForm">
+	<input type="text" name="input_title" ngModel #input_title="ngModel">
+	<textarea name="input_content" ngModel #input_content="ngModel"></textarea>
+
+	<button type="submit">submit</button>
+</form>
+ -->
+
+<!-- <form (submit)="onSavePost(postForm)" #postForm = "ngForm">
+	<input type="text" name="input_title" [ngModel]="post?.title" >
+	<textarea name="input_content" [ngModel]="post?.content"  ></textarea>
+	
+	<button type="submit">submit</button>
+</form>
+ -->
+
+<!-- <form [formGroup]="form"(submit)="onSavePost()" >
+	<input type="text"  formControlName="title" >
+	<textarea  formControlName="content" ></textarea>
+	<button  type="button" (click)="filePicker.click()">Pick Image</button>
+     <input type="file" #filePicker (change)="onImagePicked($event)">
+     <div class="image-preview" *ngIf="imagePreview !=='' && imagePreview && form.get('image').valid">
+     	<img [src]="imagePreview" [alt]="form.value.title">
+      </div>
+	<button type="submit">submit</button>
+</form> 
+
+<button type="button" class="btn btn-primary">Default</button> -->
+
+
+<div class="container">
+
+	<img src="https://wallpapersite.com/images/wallpapers/thanos-2560x1668-infinity-gauntlet-avengers-4-hd-16416.jpg" class="right">
+
+  <h2>Grow Powerful in English </h2>
+  <form [formGroup]="form"(submit)="onSavePost()">
+    <div class="form-group">
+      <label for="word">EnterWord:</label><br>
+      <input type="text"  formControlName="title" >
+      <button class="btn btn-success" (click)="SearchMeaning()">SEARCH</button>
+    </div>
+    <div class="form-group">
+      <label for="note">Add your Note:</label><br>
+      <textarea  formControlName="content" ></textarea>
+    </div>
+    <div>
+    	<button  type="button" class="btn btn-warning" (click)="filePicker.click()">Pick Image</button>
+    </div>
+    <div>
+    	 <input type="file" #filePicker (change)="onImagePicked($event)">
+    </div>
+    
+     <div class="image-preview" *ngIf="imagePreview !=='' && imagePreview && form.get('image').valid">
+     	<img [src]="imagePreview" [alt]="form.value.title">
+     </div>
+     <div>
+      	 <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+   
+  </form>
+</div>
